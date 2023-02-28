@@ -10,6 +10,10 @@ const Band = ({ band }) => {
 
   let fans_full_num = fans * 1000;
 
+  const styleList = style
+    .split(",")
+    .map((style, band_name) => <li key={band_name}>{style}</li>);
+
   return (
     <div className='band'>
       <h3>{band_name}</h3>
@@ -17,7 +21,8 @@ const Band = ({ band }) => {
       <p>Fans: {fans_full_num.toLocaleString()}</p>
       <p>Formed: {formed}</p>
       <p>Split: {split}</p>
-      <p>Style: {style}</p>
+      <p>Style:</p>
+      <ul>{styleList}</ul>
       {likesIfNotSplit}
     </div>
   );
