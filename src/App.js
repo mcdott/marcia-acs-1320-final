@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Heading from "./Heading";
+import "./App.css";
+import MetalMeta from "./MetalMeta";
+import Band from "./Band";
+import band_data from "./metal.json";
 
 function App() {
+  const bands = band_data.map((band) => (
+    <Band key={band.band_name} band={band} />
+  ));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Heading />
+      <MetalMeta />
+      <div className='bands'>{bands}</div>
     </div>
   );
 }
