@@ -14,7 +14,7 @@ function App() {
     <div className='App'>
       <Heading />
       <MetalMeta />
-      {bands}
+      <div className='bands'>{bands}</div>
     </div>
   );
 }

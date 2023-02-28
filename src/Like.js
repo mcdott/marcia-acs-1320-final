@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Like.css";
 
 function Like() {
   const [likesCount, setLikesCount] = useState(0);
@@ -12,7 +13,7 @@ function Like() {
   };
 
   return (
-    <div>
+    <div className='likes'>
       <button onClick={incrementLikes}>👍</button>
       <h2>{likesCount}</h2>
       <button onClick={decrementLikes}>👎</button>
